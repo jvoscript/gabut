@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "x_script",
+      "interpreter": "python3",
+      "script": "b.py"
+    }
+  ]
+}
