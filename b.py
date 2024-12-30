@@ -128,9 +128,9 @@ async def button(update: Update, context: CallbackContext) -> None:
     if data == 'EXPLANATION':
         explanation_text = (
             "Berikut penjelasan singkat tentang fitur/mode Xray:\n\n"
-            "1. **Redirhost Basic**: Mengarahkan lalu lintas internet ke host tertentu dengan pengaturan dasar, cocok untuk penggunaan sederhana tanpa banyak modifikasi data.\n"
-            "2. **FakeIP Basic**: Mengganti IP asli pengguna dengan IP palsu untuk menyembunyikan identitas dan meningkatkan privasi.\n"
-            "3. **Best Ping + Fake IP**: Memilih server dengan ping terbaik untuk koneksi lebih cepat, sambil mengganti IP asli dengan IP palsu untuk privasi.\n"
+            "1. **Redirhost Basic**: Mengarahkan lalu lintas internet ke host tertentu dengan pengaturan dasar, cocok untuk penggunaan sederhana tanpa banyak modifikasi data.\n\n"
+            "2. **FakeIP Basic**: Mengganti IP asli pengguna dengan IP palsu untuk menyembunyikan identitas dan meningkatkan privasi.\n\n"
+            "3. **Best Ping + Fake IP**: Memilih server dengan ping terbaik untuk koneksi lebih cepat, sambil mengganti IP asli dengan IP palsu untuk privasi.\n\n"
             "4. **Best Ping + Adblock + Fake IP**: Memilih server dengan ping terbaik, memblokir iklan, dan mengganti IP asli dengan IP palsu, memberikan pengalaman browsing yang cepat dan aman."
         )
         keyboard = [[InlineKeyboardButton("Kembali", callback_data='BACK')]]
