@@ -142,9 +142,31 @@ async def button(update: Update, context: CallbackContext) -> None:
         await show_modes(update, context)
     else:
         context.user_data['mode'] = data  # Menyimpan mode yang dipilih
+        keyboard = [[InlineKeyboardButton("Kembali", callback_data='BACK')]]
+        reply_markup = InlineKeyboardMarkup(keyboard)
         await query.answer()
-        await query.edit_message_text(f"Mode {data} dipilih. Kirimkan konfigurasi XRay Anda untuk dikonversi.")
-        return WAITING_FOR_FILENAME
+        await query.edit_message_text(
+            "━━━━━━━━━━━━━━━━\n"
+            "=>  MODE  <=\n"
+            "━━━━━━━━━━━━━━━━\n"
+            f"Mode {data} dipilih.\n"
+            "Kirimkan konfigurasi Xray Anda\n"
+            "(Multi-Akun diperbolehkan)\n"
+            "━━━━━━━━━━━━━━━━\n"
+            "=>  CONTOH MULTI-AKUN  <=\n"
+            "━━━━━━━━━━━━━━━━\n"
+            "» Multi akun harus diberikan space\n"
+            "  kebawah contoh :\n\n"
+            "Akun1\n"
+            "Akun2\n\n"
+            "» Atau bisa juga seperti ini :\n\n"
+            "Akun1|Akun2\n\n"
+            "» Multi-Akun bisa lebih dari itu\n"
+            "━━━━━━━━━━━━━━━━\n"
+            "━━━━━━━━━━━━━━━━",
+            reply_markup=reply_markup
+        )
+        return WAITING_FOR_CONFIG
 
 # Fungsi untuk meminta nama file dari pengguna
 async def ask_for_filename(update: Update, context: CallbackContext) -> None:
@@ -192,7 +214,11 @@ async def handle_xray_config(update: Update, context: CallbackContext) -> None:
         )
         return
 
-    context.user_data['config'] = config
+    # Memisahkan multi-akun berdasarkan enter atau '|'
+    configs = config.replace('\n', '|').split('|')
+    config_combined = '|'.join(configs)
+
+    context.user_data['config'] = config_combined
     await ask_for_filename(update, context)
     return WAITING_FOR_FILENAME
 
