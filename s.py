@@ -25,7 +25,7 @@ from telegram.ext import Updater, CommandHandler, CallbackContext
 import sublist3r
 
 # Token bot Telegram Anda
-TOKEN = "7196769512:AAHb02LOz6D0goxaHsykEh3VSrgiwhxy7Gw"
+TOKEN = "Gantitokenmu"
 
 # Daftar ID pengguna yang diotorisasi
 AUTHORIZED_USER_IDS = ['6238619204', '7153463884', '6083814573', '1682265469', '1954386866']
