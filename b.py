@@ -224,7 +224,7 @@ async def handle_xray_config(update: Update, context: CallbackContext) -> None:
 
 # Fungsi untuk mengonfigurasi bot
 def main():
-    token = '7085804913:AAGv_ZYJVl-HGmZgCjQpNhRigWnng39aJmY'  # Ganti dengan token bot Anda
+    token = 'gantitokenmu'  # Ganti dengan token bot Anda
 
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                         level=logging.INFO)
